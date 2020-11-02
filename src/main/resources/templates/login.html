@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head th:replace="fragments :: head">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:replace="fragments :: page-header"></div>
+
+<div class="container body-content">
+    <h2>Login</h2>
+    <form method="post">
+        <div class="form-group">
+            <label>Username
+                <input class="form-control" th:field="${loginDTO.userName}" />
+            </label>
+            <p class="error" th:errors="${loginDTO.userName}"></p>
+        </div>
+        <div class="form-group">
+            <label>Password
+                <input class="form-control" th:field="${loginDTO.password}" type="password" />
+            </label>
+            <p class="error" th:errors="${loginDTO.password}"></p>
+        </div>
+
+        <input type="submit" class="btn btn-primary" value="Login" />
+        or
+        <input type="button" class="btn btn-primary" value="Register" onClick='location.href="register"'>
+    </form>
+
+
+<!--         <a th:href="@{/register}">Register</a>-->
+
+
+
+</div>
+</body>
+</html>
